@@ -1,11 +1,12 @@
 import React from 'react';
-import FontAwesome from '@expo/vector-icons/FontAwesome';
-import { Link, Tabs } from 'expo-router';
-import { Pressable } from 'react-native';
+import { Tabs } from 'expo-router';
 import { useTheme } from 'styled-components'
-
 import { useClientOnlyValue } from '@/components/useClientOnlyValue';
 import HomeIcon from '@/components/Icons/homeIcon';
+import DiscoverIcon from '@/components/Icons/discoverIcon';
+import SettingsIcon from '@/components/Icons/settingsIcon';
+import Header from '@/container/Header';
+
 
 export default function TabLayout() {
   const theme = useTheme();
@@ -13,37 +14,32 @@ export default function TabLayout() {
   return (
     <Tabs
       screenOptions={{
+        tabBarStyle: { position: 'absolute' },
         tabBarActiveTintColor: theme.colors.primary.gold,
         // Disable the static render of the header on web
         // to prevent a hydration error in React Navigation v6.
         headerShown: useClientOnlyValue(false, true),
+        header: ({ navigation }) => <Header navigation={navigation} />
       }}>
       <Tabs.Screen
-        name="index"
+        name="home"
         options={{
           title: 'Home',
           tabBarIcon: ({ color }) => <HomeIcon color={color}/>,
-          headerRight: () => (
-            <Link href="/modal" asChild>
-              <Pressable>
-                {({ pressed }) => (
-                  <FontAwesome
-                    name="info-circle"
-                    size={25}
-                    color={theme.colors.primary.white}
-                    style={{ marginRight: 15, opacity: pressed ? 0.5 : 1 }}
-                  />
-                )}
-              </Pressable>
-            </Link>
-          ),
         }}
       />
       <Tabs.Screen
-        name="two"
+        name="dicover"
         options={{
-          title: 'Tab Two',
-          tabBarIcon: ({ color }) => <HomeIcon color={color}/>
+          title: 'Discover',
+          tabBarIcon: ({ color }) => <DiscoverIcon color={color}/>
+        }}
+      />
+      <Tabs.Screen
+        name="settings"
+        options={{
+          title: 'Settings',
+          tabBarIcon: ({ color }) => <SettingsIcon color={color}/>
         }}
       />
     </Tabs>

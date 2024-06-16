@@ -1,14 +1,14 @@
 import { StyleSheet } from 'react-native';
 
-import EditScreenInfo from '@/components/EditScreenInfo';
-import { Text, View } from 'react-native'
+// import EditScreenInfo from '@/components/EditScreenInfo';
+import { Text, View } from 'react-native';
 
-export default function TabOneScreen() {
+export default function DiscoverScreen() {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Tab One</Text>
-      <View style={styles.separator} />
-      <EditScreenInfo path="app/(tabs)/index.tsx" />
+      <Text style={styles.title}>Dicover</Text>
+      <View style={styles.separator}  />
+      {/* <EditScreenInfo path="app/(tabs)/two.tsx" /> */}
     </View>
   );
 }
