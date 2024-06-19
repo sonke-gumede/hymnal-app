@@ -47,7 +47,13 @@ export default function RootLayout() {
 function RootLayoutNav() {
   return (
     <ThemeProvider theme={theme}>
-      <Stack>
+      <Stack screenOptions={{
+        statusBarColor: theme.colors.primary.dark,
+        navigationBarColor: theme.colors.primary.dark,
+        contentStyle: {
+          backgroundColor: theme.colors.primary.dark
+        }
+      }}>
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
         {/* <Stack.Screen name="modal" options={{ presentation: 'modal' }} /> */}
       </Stack>
