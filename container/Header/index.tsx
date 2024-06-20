@@ -1,28 +1,43 @@
-import React from 'react';
-import { View, TouchableOpacity } from 'react-native';
-import Ionicons from '@expo/vector-icons/Ionicons';
-import EvilIcons from '@expo/vector-icons/EvilIcons';
-import { styled } from 'styled-components/native';
+import React from "react";
+import { TouchableOpacity } from "react-native";
+import Ionicons from "@expo/vector-icons/Ionicons";
+import { Avatar, makeStyles } from "@rneui/themed";
+import { Header as HeaderRNE } from "@rneui/themed";
 
-const Container = styled.View`
-  display: flex;
-  background-color: ${props => props.theme.colors.primary.dark};
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center; 
-  padding: 10px;
-`
+const useStyles = makeStyles((theme) => ({
+  container: {
+    backgroundColor: theme.colors.primary.dark,
+    justifyContent: "center",
+    alignItems: "center",
+    // marginBottom: 20,
+    width: "100%",
+    paddingVertical: 10,
+  },
+}));
 
 const Header = ({ navigation }) => {
+  const styles = useStyles();
   return (
-    <Container>
-      <TouchableOpacity onPress={() => navigation.navigate('profile')}>
-        <EvilIcons name="user" color="white" size={30} />
-      </TouchableOpacity>
-      <TouchableOpacity onPress={() => navigation.navigate('notifications')}>
-        <Ionicons name="notifications-outline" color="white" size={30} />
-      </TouchableOpacity>
-    </Container>
+    <HeaderRNE
+      barStyle="light-content"
+      containerStyle={styles.container}
+      leftComponent={
+        <TouchableOpacity onPress={() => navigation.navigate("profile")}>
+          <Avatar
+            size={30}
+            rounded
+            source={{
+              uri: "https://cdn.pixabay.com/photo/2019/11/03/20/11/portrait-4599553__340.jpg",
+            }}
+          />
+        </TouchableOpacity>
+      }
+      rightComponent={
+        <TouchableOpacity onPress={() => navigation.navigate("notifications")}>
+          <Ionicons name="notifications-outline" color="white" size={30} />
+        </TouchableOpacity>
+      }
+    />
   );
 };
 
