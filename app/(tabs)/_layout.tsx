@@ -1,17 +1,19 @@
 import React from 'react';
 import { Tabs } from 'expo-router';
-import { useTheme } from 'styled-components'
 import { useClientOnlyValue } from '@/components/useClientOnlyValue';
 import HomeIcon from '@/components/Icons/homeIcon';
 import DiscoverIcon from '@/components/Icons/discoverIcon';
 import SettingsIcon from '@/components/Icons/settingsIcon';
 import Header from '@/container/Header';
+import { useTheme } from '@rneui/themed';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 
 export default function TabLayout() {
-  const theme = useTheme();
+  const { theme } = useTheme();
 
   return (
+    <SafeAreaProvider>
     <Tabs
       screenOptions={{
         tabBarStyle: { position: 'absolute', backgroundColor: theme.colors.primary.dark },
@@ -44,5 +46,6 @@ export default function TabLayout() {
         }}
       />
     </Tabs>
+    </SafeAreaProvider>
   );
 }
