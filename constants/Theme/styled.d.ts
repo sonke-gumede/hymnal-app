@@ -1,15 +1,16 @@
 // import original module declarations
-import "styled-components";
+import "@rneui/themed";
 
 // and extend them!
-declare module "styled-components" {
-  export interface DefaultTheme {
+declare module '@rneui/themed' {
+  export interface Theme {
     colors: {
       primary: {
         gold: string;
         pacificBlue: string;
         dark: string;
         white: string;
+        lightGrey: string;
       };
       secondary: {
         facebook: string;
@@ -24,7 +25,7 @@ declare module "styled-components" {
       fontFamily: {
         kronaOne: string;
       };
-      weight: Record<number, number>;
+      weight: Record<number, number>[];
       size: {
         xsmall: string;
         small: string;
