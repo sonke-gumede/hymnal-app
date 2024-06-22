@@ -12,10 +12,11 @@ const useStyles = makeStyles((theme) => ({
     // marginBottom: 20,
     width: "100%",
     paddingVertical: 10,
+    borderBottomWidth: 0
   },
 }));
 
-const Header = ({ navigation }) => {
+const Header = ({ navigation }:any) => {
   const styles = useStyles();
   return (
     <HeaderRNE
