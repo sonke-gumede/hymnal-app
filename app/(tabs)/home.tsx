@@ -1,13 +1,15 @@
 import SearchInput from "@/components/Inputs/SearchInput";
+import Favourites from "@/container/Body/Favourites";
+import SongOfTheDay from "@/container/Body/SongOfTheDay";
 import { makeStyles } from "@rneui/themed";
-import { StyleSheet } from "react-native";
-import { Text, View } from "react-native";
+import { View } from "react-native";
 
 const useStyles = makeStyles((theme) => ({
   container: {
     flex: 1,
     alignItems: "flex-start",
     justifyContent: "flex-start",
+    flexDirection: "column",
     padding: 10,
     backgroundColor: theme.colors.primary.dark,
   },
@@ -23,15 +25,13 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function HomeScreen() {
-  const styles = useStyles()
+  const styles = useStyles();
   return (
     <View style={styles.container}>
       <SearchInput />
-      <View style={{flex: 2}}>
-        <Text>Home</Text>
-      </View>
+      <SongOfTheDay />
+      <Favourites />
       <View style={styles.separator} />
     </View>
   );
 }
-

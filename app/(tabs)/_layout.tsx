@@ -16,7 +16,11 @@ export default function TabLayout() {
     <SafeAreaProvider>
     <Tabs
       screenOptions={{
-        tabBarStyle: { position: 'absolute', backgroundColor: theme.colors.primary.dark },
+        tabBarStyle: { 
+          position: 'absolute', 
+          backgroundColor: theme.colors.primary.dark,
+          borderTopWidth: 0
+         },
         tabBarActiveTintColor: theme.colors.primary.gold,
         tabBarInactiveTintColor: theme.colors.primary.white,
         // Disable the static render of the header on web
