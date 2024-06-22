@@ -24,13 +24,13 @@ export default createTheme({
   },
   fonts: {
     fontFamily: { kronaOne: "Krona One" },
-    weight: FontWightObject(),
+    // weight: FontWightObject(),
     size: {
-      xsmall: "10px",
-      small: "12px",
-      medium: "14px",
-      large: "16px",
-      xlarge: "36px",
+      xsmall: 12,
+      small: 14,
+      medium: 16,
+      large: 18,
+      xlarge: 24,
     },
   },
 });

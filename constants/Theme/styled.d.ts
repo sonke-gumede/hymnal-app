@@ -25,13 +25,13 @@ declare module '@rneui/themed' {
       fontFamily: {
         kronaOne: string;
       };
-      weight: Record<number, number>[];
+      weight: any;
       size: {
-        xsmall: string;
-        small: string;
-        medium: string;
-        large: string;
-        xlarge: string;
+        xsmall: number;
+        small: number;
+        medium: number;
+        large: number;
+        xlarge: number;
       };
     };
   }
