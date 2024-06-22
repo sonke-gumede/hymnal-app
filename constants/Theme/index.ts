@@ -18,9 +18,13 @@ export default createTheme({
       deepCarmine: "#A5243D",
       fountainBlue: "#70B8CF",
       softPurple: "#A670CF",
-      warmGrey: "#8F8F8F",
-     
+      warmGrey: "#8F8F8F"
     },
+    gradient: {
+      gold: "#573A11",
+      pacificBlue:"#064750",
+      softPurple: "#533868"
+    }
   },
   fonts: {
     fontFamily: { kronaOne: "Krona One" },

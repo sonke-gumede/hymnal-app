@@ -20,6 +20,11 @@ declare module '@rneui/themed' {
         softPurple: string;
         warmGrey: string;
       };
+      gradient: {
+        gold: string;
+        pacificBlue: string;
+        softPurple: string;
+      }
     };
     fonts: {
       fontFamily: {
