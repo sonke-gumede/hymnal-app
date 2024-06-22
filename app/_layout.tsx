@@ -45,13 +45,14 @@ export default function RootLayout() {
 }
 
 function RootLayoutNav() {
+
   return (
     <ThemeProvider theme={theme}>
       <Stack screenOptions={{
-        statusBarColor: theme.colors.primary.dark,
-        navigationBarColor: theme.colors.primary.dark,
+        statusBarColor: '#171717',
+        navigationBarColor: '#171717',
         contentStyle: {
-          backgroundColor: theme.colors.primary.dark
+          backgroundColor: '#171717'
         }
       }}>
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />

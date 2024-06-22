@@ -1,6 +1,6 @@
 import React from 'react';
 import { Tabs } from 'expo-router';
-import { useClientOnlyValue } from '@/components/useClientOnlyValue';
+
 import HomeIcon from '@/components/Icons/homeIcon';
 import DiscoverIcon from '@/components/Icons/discoverIcon';
 import SettingsIcon from '@/components/Icons/settingsIcon';
@@ -21,7 +21,7 @@ export default function TabLayout() {
         tabBarInactiveTintColor: theme.colors.primary.white,
         // Disable the static render of the header on web
         // to prevent a hydration error in React Navigation v6.
-        headerShown: useClientOnlyValue(false, true),
+        headerShown: true,
         header: ({ navigation }) => <Header navigation={navigation} />
       }}>
       <Tabs.Screen

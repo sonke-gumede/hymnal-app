@@ -1,22 +1,15 @@
 import SearchInput from "@/components/Inputs/SearchInput";
+import { makeStyles } from "@rneui/themed";
 import { StyleSheet } from "react-native";
 import { Text, View } from "react-native";
 
-export default function HomeScreen() {
-  return (
-    <View style={styles.container}>
-      <SearchInput placeholder="Search" />
-      <Text style={styles.title}>Home</Text>
-      <View style={styles.separator} />
-    </View>
-  );
-}
-
-const styles = StyleSheet.create({
+const useStyles = makeStyles((theme) => ({
   container: {
     flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
+    alignItems: "flex-start",
+    justifyContent: "flex-start",
+    padding: 10,
+    backgroundColor: theme.colors.primary.dark,
   },
   title: {
     fontSize: 20,
@@ -27,4 +20,18 @@ const styles = StyleSheet.create({
     height: 1,
     width: "80%",
   },
-});
+}));
+
+export default function HomeScreen() {
+  const styles = useStyles()
+  return (
+    <View style={styles.container}>
+      <SearchInput />
+      <View style={{flex: 2}}>
+        <Text>Home</Text>
+      </View>
+      <View style={styles.separator} />
+    </View>
+  );
+}
+
