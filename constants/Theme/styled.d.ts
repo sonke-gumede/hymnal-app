@@ -24,6 +24,9 @@ declare module '@rneui/themed' {
         gold: string;
         pacificBlue: string;
         softPurple: string;
+      },
+      transparent: {
+        dark: string;
       }
     };
     fonts: {

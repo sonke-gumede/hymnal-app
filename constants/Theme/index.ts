@@ -24,6 +24,9 @@ export default createTheme({
       gold: "#573A11",
       pacificBlue:"#064750",
       softPurple: "#533868"
+    },
+    transparent: {
+      dark: 'rgba(23, 23, 23,0.95)'
     }
   },
   fonts: {
