@@ -1,8 +1,10 @@
 import SearchInput from "@/components/Inputs/SearchInput";
+import Collections from "@/container/Body/Collections";
 import Favourites from "@/container/Body/Favourites";
 import SongOfTheDay from "@/container/Body/SongOfTheDay";
 import { makeStyles } from "@rneui/themed";
 import { View } from "react-native";
+import { ScrollView } from "react-native";
 
 const useStyles = makeStyles((theme) => ({
   container: {
@@ -29,9 +31,12 @@ export default function HomeScreen() {
   return (
     <View style={styles.container}>
       <SearchInput />
-      <SongOfTheDay />
-      <Favourites />
-      <View style={styles.separator} />
+      <ScrollView>
+        <SongOfTheDay />
+        <Favourites />
+        <Collections />
+        <View style={styles.separator} />
+      </ScrollView>
     </View>
   );
 }
